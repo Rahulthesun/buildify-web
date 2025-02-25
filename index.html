@@ -1,215 +1,450 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Buildify</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buildify - Custom Websites for Business Growth</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script src="https://kit.fontawesome.com/853a55ecdc.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-
-  <style>
-    /* Custom class for the background */
-    .custom-background {
-      width:100%;
-      opacity:0.9;
-        background-color: #ece9ff;
-        opacity: 0.9;
-        background-image: radial-gradient(#7a66ee 0.9500000000000001px, #ece9ff 0.9500000000000001px);
-        background-size: 19px 19px;
-    }
-
-    
-  </style>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-              sans: ["Poppins", "sans-serif"],
+            sans: ["Poppins", "sans-serif"],
           },
+          colors: {
+            primary: {
+              DEFAULT: '#7a66ee',
+              light: '#ece9ff',
+            }
+          }
         },
       },
     };
   </script>
+</head>
 
-<body>
-
-  <section id="home" class="custom-background">
-    <div class="flex h-30 min-w-max mx-auto flex-row content-center justify-between py-10 p-8 sm:justify-between">
-      <div class="h-auto content-center align-middle">
-        <h1 class="h-auto w-64 align-middle font-semibold text-4xl  px-2">Buildify <span class="text-purple-700">{}</span></h1>
-      </div>
-
-      <div class="block lg:hidden">
-        <i class="fa-solid fa-bars text-5xl align-center"></i>
-      </div>  
+<body class="font-sans text-gray-800 overflow-x-hidden">
+  <!-- Header -->
+  <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#home" class="text-2xl font-bold">
+        <span class="font-extrabold text-black"><i class="fa-solid fa-code"></i></span> Buildify 
+      </a>
       
+      <button id="mobile-menu-button" class="lg:hidden text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav id="nav-menu" class="hidden lg:flex items-center space-x-8">
+        <a href="#home" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Home</a>
+        <a href="#about" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">About Us</a>
+        <a href="#pricing" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Pricing</a>
+        <a href="#startups" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">For Startups</a>
+        <a href="#contact" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-      <div class="lg:flex h-auto min-w-max flex-row content-center justify-center align-center hidden ">
-        <a href="#home" class="m-auto hover:underline"><p class=" text-xl font-semibold mr-10 font-sans">Home</p></a>
-        <a href="#about" class="m-auto  hover:underline"><p class="m-auto text-xl font-semibold mr-10 font-sans ">About Us</p></a>
-         <a href="#biz" class="m-auto  hover:underline"><p class="m-auto text-xl font-semibold mr-10 font-sans">Pricing</p></a>
-         <a href="#startups" class="m-auto  hover:underline"><p class="m-auto text-xl font-semibold mr-10  font-sans">Our Clients</p></a>
-         <a href="" class="m-auto  hover:underline"><p class="m-auto text-xl font-semibold mr-10  font-sans">For Startups</p></a>
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden">
+    <div class="flex justify-end p-4">
+      <button id="close-menu" class="text-2xl focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-4 p-4">
+      <a href="#home" class="py-2 font-medium hover:text-primary">Home</a>
+      <a href="#about" class="py-2 font-medium hover:text-primary">About Us</a>
+      <a href="#pricing" class="py-2 font-medium hover:text-primary">Pricing</a>
+      <a href="#startups" class="py-2 font-medium hover:text-primary">For Startups</a>
+      <a href="#contact" class="py-2 font-medium hover:text-primary">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-28 pb-16 bg-primary-light" style="background-image: radial-gradient(#7a66ee 0.8px, #ece9ff 0.8px); background-size: 20px 20px;">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center justify-center text-center py-16">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-800 to-primary bg-clip-text text-transparent">Custom Websites</h1>
+        <h2 class="text-xl md:text-2xl lg:text-3xl font-medium mb-8">Designed to Grow Your Business</h2>
+        <div class="flex flex-col sm:flex-row gap-4 mt-6">
+          <a href="#pricing" class="px-8 py-3 bg-primary text-white font-semibold rounded-full border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 text-center">View Pricing</a>
+          <a href="#contact" class="px-8 py-3 bg-transparent text-gray-800 font-semibold rounded-full border-2 border-gray-800 hover:bg-gray-800 hover:text-white transition-all duration-300 text-center">Contact Us</a>
+        </div>
       </div>
-
     </div>
-
-    <div class="h-auto flex w-full flex-col justify-center py-36 mx-auto ">
-      <h1 class="text-center text-5xl md:text-7xl sm:text-5xl font-extrabold font-sans">Custom Websites</h1>
-      <h1 class="text-3xl md:text-5xl sm:text-4xl text-3xl text-center font-medium mt-2 font-sans">Designed to Grow Your Business</h1>
-    </div>
-
   </section>
-  
-  <section id="about" class="my-10">
-    <div class="w-full m-auto align-center">
-      <h1 class="w-80 text-4xl font-bold text-center mb-10 font-sans mx-auto " >About Buildify</h1>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">About Buildify</h2>
       
-      <div class="sm:w-2/3 flex sm:flex-row flex-col justify-center 
-        align-center mb-10 mx-auto ">
-        <img class="sm:w-72 w-3/4 h-auto mx-auto " src="https://ouch-cdn2.icons8.com/aa-wDxZIZMZXPRM9yfA3__fncUXSlsBJ0L1vPAtmuW0/rs:fit:608:456/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNDc3/L2UyMTMwZGI2LWM1/NjEtNDMzMC04MDYw/LWFmNzQ3NDVmNzkw/Yi5zdmc.png">
-
-        <p class="w-96 text-left text-2xl font-regular font-sans justify-self-left p-3 my-auto mx-auto ">Buildify is a dynamic team of talented young professionals, composed of recent college graduates with a passion for coding and innovation. Our team specializes in crafting custom websites and developing robust backend technologies, tailored to meet the unique needs of startups and emerging businesses.</p>
-      </div>
-
-      <div class="sm:w-2/3 flex sm:flex-row-reverse flex-col justify-center
-        align-center mb-10 mx-auto">
-        <img class="sm:w-auto w-3/4 h-max mx-auto" src="aboutus.png">
-
-        <p class="w-96 text-left text-2xl font-regular font-sans p-3 my-auto mx-auto ">With a strong foundation in the latest web development frameworks and tools, we bring creativity, technical expertise, and a results-driven approach to every project we undertake. At Buildify, we believe in empowering startups by delivering high-quality, scalable, and user-friendly digital solutions that help them achieve their goals and stand out in a competitive market.</p>
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-16">
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img src="/api/placeholder/500/400" alt="Team of developers" class="w-full max-w-md rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <p class="text-lg mb-4">Buildify is a dynamic team of talented young professionals, composed of recent college graduates with a passion for coding and innovation. Our team specializes in crafting custom websites and developing robust backend technologies, tailored to meet the unique needs of startups and emerging businesses.</p>
+          <p class="text-lg">With a strong foundation in the latest web development frameworks and tools, we bring creativity, technical expertise, and a results-driven approach to every project we undertake.</p>
+        </div>
       </div>
       
-    <div>  
-  </section>  
-
-<!-- 
-
-      <section id="clients" class="mt-20 ">
-          <div class="w-9/10 m-auto border-1 ">
-            <h1 class="text-4xl font-bold text-center font-sans">Our Clients</h1>
-
-          <div>  
-      </section> 
-      
-      -->
-
-  
-
-  <section id="biz" class="mt-20 font-sans">
-    <div class="w-3/5 m-auto">
-      <h1 class="text-4xl font-bold text-center">For Small Businesses</h1>
-      <p class ="text-9xl my-5 text-center"><i class="fa-solid fa-shop"></i></p>
-      <p class="w-full text-center text-xl font-regular">At Buildify, we understand the challenges small businesses face in establishing a strong online presence. That’s why we offer tailored website solutions designed to fit your needs and budget. Our plans are crafted to ensure every small business can access high-quality, professional websites without breaking the bank.</p>
-    
-    </div>
-    <div class="w-full grid grid-rows-3 lg:grid-cols-3 lg:grid-rows-none md:grid-cols-2 md:grid-rows-2 sm:grid-rows-3 min-w-max h-auto gap-10 mt-10 p-2 mx-auto mb-1">
-      <div class="flex flex-col justify-left items-top border-4 border-gray-600 rounded-3xl p-8 pb-1">
-         <h2 class="font-bold text-2xl">Starter</h2>
-        <h1 class="text-5xl font-extrabold py-10">Rs 2,999</p>
-
-          <div class="mt-10">
-            <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> One Page Static Website</p>
-             <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Free Domain</p>
-             <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Week Delivery</p>
-             <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Month Developer Support </p>
-             <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Complex Site Functionality</p>
-             <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Dynamic Content</p>
-             <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Free Web Hosting</p>
-             <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Video / Image  Gallery</p>
-           </div>
-       
-      </div>  
-
-        <div class="flex flex-col justify-left items-top border-4 border-gray-600 rounded-3xl p-8 pb-1">
-           <h2 class="font-bold text-2xl">Business </h2>
-          <h1 class="text-5xl font-extrabold py-10">Rs 6,999</p>
-            
-            <div class="mt-10">
-               <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> One Page Static Website</p>
-               <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Free Domain</p>
-               <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Week Delivery</p>
-               <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Month Developer Support </p>
-               <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Complex Site Functionality</p>
-               <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Dynamic Content</p>
-               <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Free Web Hosting</p>
-               <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Video / Image  Gallery</p>
-             </div>
-        </div>  
-
-          <div class="flex flex-col justify-left items-top border-4 border-gray-600 rounded-3xl p-8 pb-1"> 
-            <h2 class="font-bold text-2xl">Business Pro</h2>
-            <h1 class="text-5xl font-extrabold  py-10">Rs 12,999</p>
-
-              <div class="mt-10">
-                <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> One Page Static Website</p>
-                 <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Free Domain</p>
-                 <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Week Delivery</p>
-                 <p class="text-base font-medium mb-4"><i class="fa-regular fa-circle-check" style="color: #00f53d;"></i> 1 Month Developer Support </p>
-                 <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Complex Site Functionality</p>
-                 <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Dynamic Content</p>
-                 <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Free Web Hosting</p>
-                 <p class="text-base font-medium mb-4"><i class="fa-solid fa-circle-xmark" style="color: #ff1a1a;"></i> No Video / Image  Gallery</p>
-               </div>
-            
-          </div>  
-
-      
-      
-    </div>
-    <p class="sm:text-3xl text-xl text-center mt-10 font-semibold ">Need a More Custom Website ?</p>
-    
-    <a href="">
-      <div class="w-52 mx-auto my-10 rounded-full bg-black py-3.5 px-4 text-center text-2xl font-bold text-white hover:bg-white hover:text-black  border-4 border-black cursor-pointer" > Contact Us</div>
-    </a>
-  </section> 
-
-  <section id="startups" class="my-20 font-sans">
-      <div class="w-3/5 max-w-7xl m-auto border-1">
-        <h1 class="text-4xl font-bold text-center">For Startups</h1>
-
-        <div class="">
-          <p class ="text-9xl my-5 text-center"><i class="fa-regular fa-lightbulb"></i></p>
-          <p class="w-9/10 mx-auto text-center text-xl font-regular">Buildify is dedicated to helping startups succeed by providing affordable, scalable, and innovative website solutions. We design websites that cater to the unique needs of startups, enabling them to make a strong first impression, attract investors, and grow their audience.</p>
-
-          <a href="">
-            <div class="sm:w-96 w-80 text-md justify-self-center my-10 rounded-full bg-black py-3 text-center text-2xl font-bold text-white hover:bg-white hover:text-black border-4 border-black cursor-pointer" > Build a Startup Today </div>
-          </a>
-
-
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img src="/api/placeholder/500/400" alt="Collaborative workspace" class="w-full max-w-md rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
         </div>
-      </div>  
-  </section> 
-
-        <div class="flex h-30 w-full sm:w-9/10 mx-auto flex-row content-center justify-between p-10">
-          <div class="sm: h-auto content-center align-middle">
-            <h1 class="h-auto w-52 align-middle sm:text-4xl text-4xl font-semibold poppins">Buildify <span class="text-purple-700">{}</span></h1>
-          </div>
-
-          <div class="block lg:hidden">
-            <i class="fa-solid fa-bars text-5xl align-center"></i>
-          </div>  
-
-          <div class="lg:flex hidden h-auto min-w-max flex-row content-center justify-center align-center ">
-            <a href="" class="m-auto hover:underline"><p class=" text-lg font-semibold mr-10 font-sans">Home</p></a>
-            <a href="" class="m-auto  hover:underline"><p class="m-auto text-lg font-semibold mr-10 font-sans ">About Us</p></a>
-             <a href="" class="m-auto  hover:underline"><p class="m-auto text-lg font-semibold mr-10 font-sans">Pricing</p></a>
-             <a href="" class="m-auto  hover:underline"><p class="m-auto text-lg font-semibold mr-10  font-sans">Our Clients</p></a>
-             <a href="" class="m-auto  hover:underline"><p class="m-auto text-lg font-semibold mr-10  font-sans">For Startups</p></a>
-          </div>
-
+        <div class="w-full md:w-1/2">
+          <p class="text-lg mb-4">At Buildify, we believe in empowering startups by delivering high-quality, scalable, and user-friendly digital solutions that help them achieve their goals and stand out in a competitive market.</p>
+          <p class="text-lg">Our dedication to excellence and client satisfaction drives us to consistently deliver websites that not only look stunning but also perform exceptionally well across all devices and platforms.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-  <script type="module" src="script.js"></script>
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For Small Businesses</h2>
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-6xl text-primary mb-6">
+          <i class="fas fa-shop"></i>
+        </div>
+        <p class="text-lg">At Buildify, we understand the challenges small businesses face in establishing a strong online presence. That's why we offer tailored website solutions designed to fit your needs and budget. Our plans are crafted to ensure every small business can access high-quality, professional websites without breaking the bank.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <!-- Starter Plan -->
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Starter</h3>
+            <div class="text-4xl font-extrabold text-primary mb-4">₹2,999</div>
+          </div>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>One Page Static Website</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>1 Free Domain</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>1 Week Delivery</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>1 Month Developer Support</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
+              <span>No Complex Site Functionality</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
+              <span>No Dynamic Content</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
+              <span>No Free Web Hosting</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
+              <span>No Video/Image Gallery</span>
+            </div>
+          </div>
+          
+          <div class="text-center mt-8">
+            <a href="#contact" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
+          </div>
+        </div>
+        
+        <!-- Business Plan -->
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-2 border-primary">
+          <div class="absolute top-5 right-0 bg-primary text-white py-1 px-6 text-sm font-semibold transform rotate-45 translate-x-7">POPULAR</div>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Business</h3>
+            <div class="text-4xl font-extrabold text-primary mb-4">₹6,999</div>
+          </div>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Multi-Page Website (Up to 5 pages)</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>1 Free Domain</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>2 Weeks Delivery</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>3 Months Developer Support</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Basic Site Functionality</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Image Gallery</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
+              <span>No Dynamic Content</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
+              <span>No Free Web Hosting</span>
+            </div>
+          </div>
+          
+          <div class="text-center mt-8">
+            <a href="#contact" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300">Get Started</a>
+          </div>
+        </div>
+        
+        <!-- Business Pro Plan -->
+        <div class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Business Pro</h3>
+            <div class="text-4xl font-extrabold text-primary mb-4">₹12,999</div>
+          </div>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Multi-Page Website (Up to 10 pages)</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>1 Free Domain + Hosting</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>3-4 Weeks Delivery</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>6 Months Developer Support</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Advanced Site Functionality</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Dynamic Content</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Video & Image Gallery</span>
+            </div>
+            <div class="flex items-baseline">
+              <i class="far fa-circle-check text-green-500 mr-3"></i>
+              <span>Custom Branded Design</span>
+            </div>
+          </div>
+          
+          <div class="text-center mt-8">
+            <a href="#contact" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16">
+        <p class="text-xl md:text-2xl font-semibold mb-6">Need a More Custom Website?</p>
+        <a href="#contact" class="inline-block px-8 py-4 bg-gray-800 text-white font-bold rounded-full border-2 border-gray-800 hover:bg-white hover:text-gray-800 transition-all duration-300">Contact Us</a>
+      </div>
+    </div>
+  </section>
 
-<body>
+  <!-- Startups Section -->
+  <section id="startups" class="py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For Startups</h2>
+      
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="text-6xl text-primary mb-6">
+          <i class="far fa-lightbulb"></i>
+        </div>
+        <p class="text-lg mb-10">Buildify is dedicated to helping startups succeed by providing affordable, scalable, and innovative website solutions. We design websites that cater to the unique needs of startups, enabling them to make a strong first impression, attract investors, and grow their audience. Our startup-focused packages include everything you need to establish a professional online presence.</p>
+        
+        <div class="grid md:grid-cols-2 gap-8 text-left mt-12 mb-12">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl text-primary mb-4">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Launch Package</h3>
+            <p>Perfect for startups looking to establish their online presence quickly. Includes essential branding elements and an optimized landing page.</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl text-primary mb-4">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Growth Package</h3>
+            <p>Designed for startups ready to scale. Includes comprehensive web solutions, custom functionality, and marketing integration.</p>
+          </div>
+        </div>
+        
+        <a href="#contact" class="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 mt-6">Build a Startup Today</a>
+      </div>
+    </div>
+  </section>
 
-<html>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">Get In Touch</h2>
+      
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="md:flex">
+          <div class="md:w-1/2 bg-primary p-8 text-white">
+            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div class="text-xl mt-1 mr-4"><i class="fas fa-map-marker-alt"></i></div>
+                <p>123 Innovation Street, Tech Park, Bangalore, India</p>
+              </div>
+              <div class="flex items-start">
+                <div class="text-xl mt-1 mr-4"><i class="fas fa-envelope"></i></div>
+                <p>hello@buildify.com</p>
+              </div>
+              <div class="flex items-start">
+                <div class="text-xl mt-1 mr-4"><i class="fas fa-phone-alt"></i></div>
+                <p>+91 9876543210</p>
+              </div>
+            </div>
+            
+            <div class="mt-12">
+              <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-40 transition-all">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-40 transition-all">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-40 transition-all">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-40 transition-all">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="md:w-1/2 p-8">
+            <h3 class="text-2xl font-bold mb-6">Send us a message</h3>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark transition-colors">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white pt-16 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Buildify <span class="text-primary">{}</span></h3>
+          <p class="mb-6">We create stunning websites designed to help your business grow and succeed in the digital landscape.</p>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">Our Team</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">Careers</a></li>
+            <li><a href="#contact" class="hover:text-primary transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="hover:text-primary transition-colors">Web Development</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">E-commerce Solutions</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">UI/UX Design</a></li>
+            <li><a href="#" class="hover:text-primary transition-colors">Digital Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Newsletter</h4>
+          <p class="mb-4">Subscribe to our newsletter for the latest updates and offers.</p>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="w-full px-4 py-2 bg-gray-700 rounded-l-md focus:outline-none" />
+            <button type="submit" class="bg-primary px-4 rounded-r-md hover:bg-opacity-90 transition-colors">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Buildify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMenuButton = document.getElementById('close-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.remove('translate-x-full');
+      });
+      
+      closeMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.add('translate-x-full');
+      });
+      
+      // Close menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('translate-x-full');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
