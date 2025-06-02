@@ -3,26 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buildify - Custom Websites That Grow Your Business</title>
-  <meta name="description" content="We create stunning, high-performance websites for businesses. Get a website that converts visitors into customers.">
+  <title>Buildify - Stunning Custom Websites That Grow Your Business</title>
+  <meta name="description" content="Buildify creates stunning, high-converting websites for businesses. From eCommerce to landing pages, we design for growth and results. Based in India.">
+  <meta name="keywords" content="custom websites, web design India, business website, ecommerce development, landing page design, Buildify, website development services">
+  <meta name="author" content="Buildify Web Team">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://buildify-web.com">
 
+  <!-- Tailwind & Font Awesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.ibb.co/8gCsbMv5/favicon-32x32-removebg-preview-2.png">
 
+  <!-- Open Graph for social media -->
   <meta property="og:title" content="Buildify - Custom Websites That Grow Your Business">
-  <meta property="og:description" content="We create high-performance websites for businesses.">
+  <meta property="og:description" content="We build high-performance websites that help businesses grow and convert more customers.">
   <meta property="og:image" content="https://i.ibb.co/0yRSD9tN/Screenshot-2025-02-27-170831.png">
-  <meta property="og:url" content="https://buildify-web.in">
+  <meta property="og:url" content="https://buildify-web.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Buildify - Custom Websites">
-  <meta name="twitter:description" content="Get a website that drives business growth.">
+  <meta name="twitter:title" content="Buildify - High-Converting Custom Websites">
+  <meta name="twitter:description" content="From eCommerce to landing pages, Buildify builds stunning websites that grow your business.">
   <meta name="twitter:image" content="https://i.ibb.co/0yRSD9tN/Screenshot-2025-02-27-170831.png">
-  
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
@@ -41,23 +54,35 @@
     };
   </script>
 
-<script type="application/ld+json">
+  <!-- Structured Data: Organization + Website + LocalBusiness -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     "name": "Buildify",
-    "url": "https://buildify-web.in",
+    "url": "https://buildify-web.com",
     "logo": "https://i.ibb.co/JRPYJrc2/Untitled-design-43.png",
-    "description": "We create high-performance websites for businesses.",
+    "image": "https://i.ibb.co/0yRSD9tN/Screenshot-2025-02-27-170831.png",
+    "description": "Buildify creates stunning custom websites that grow your business. Based in India, serving global clients.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chennai",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "India"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+919940665596",
-      "contactType": "customer service"
-    }
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://www.instagram.com/buildifyweb",
+      "https://www.linkedin.com/company/buildifyweb"
+    ]
   }
   </script>
-  
 </head>
+
 
 <style>
 
@@ -82,9 +107,21 @@ html, body {
         <a href="#home" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Home</a>
         <a href="#about" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">About Us</a>
         <a href="#portfolio" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Our Clients</a>
-        <a href="#pricing" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Pricing</a>
-        <a href="#startups" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">For Startups</a>
-        <a href="#contact" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Contact</a>
+        <!-- Services Dropdown (Desktop) -->
+        <div class="relative group hidden lg:block">
+          <button class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all group-hover:after:w-full">
+            Services
+          </button>
+          <div class="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-200 z-50">
+            <a href="#pricing" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Website Development</a>
+            <a href="#app-development" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">App Development</a>
+            <a href="#ecommerce" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Custom Ecommerce Stores</a>
+            <a href="#shopify-ecommerce" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Shopify Ecommerce</a>
+            <a href="#startups" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Startups</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="font-medium hover:text-primary relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -100,10 +137,24 @@ html, body {
       <a href="#home" class="py-2 font-medium hover:text-primary">Home</a>
       <a href="#about" class="py-2 font-medium hover:text-primary">About Us</a>
       <a href="#portfolio" class="py-2 font-medium hover:text-primary">Our Clients</a>
-      <a href="#pricing" class="py-2 font-medium hover:text-primary">Pricing</a>
-      <a href="#startups" class="py-2 font-medium hover:text-primary">For Startups</a>
-      <a href="#contact" class="py-2 font-medium hover:text-primary">Contact</a>
+      <!-- Services Dropdown (Mobile) -->
+      <div class="relative">
+        <button id="mobile-services-toggle-2" class="w-full text-left py-2 font-medium hover:text-primary flex justify-between items-center">
+          Services
+          <i class="fas fa-chevron-down ml-2 transition-transform" id="mobile-chevron-2"></i>
+        </button>
+        <div id="mobile-services-menu-2" class="hidden flex-col space-y-2 pl-4 mt-2 text-sm text-gray-700">
+          <a href="#pricing" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Website Development</a>
+          <a href="#app-development" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">App Development</a>
+          <a href="#ecommerce" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Custom Ecommerce Stores</a>
+          <a href="#shopify-ecommerce" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Shopify Ecommerce</a>
+          <a href="#startups" class="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700">Startups</a>
+        </div>
+      </div>
+
+      <a href="#contact" class="py-2 font-medium hover:text-primary">Contact Us</a>
     </nav>
+
   </div>
 
   <!-- Hero Section -->
@@ -149,12 +200,12 @@ html, body {
 
 <!-- Portfolio Section -->
 <section id="portfolio" class="py-16 md:py-24 bg-white">
-  <div class="container mx-auto px-4">
+  <div class="mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">Our Clients</h2>
     
     <!-- Portfolio Description -->
     <div class="max-w-3xl mx-auto text-center mb-12">
-      <p class="text-gray-600">We're proud to have worked with some amazing clients across various industries. Scroll through to see some of the brands that trust us with their digital presence.</p>
+      <p class="text-gray-600">We're proud to have worked with some amazing clients across various industries. Scroll through to see some of the brands that trust us with their digital presence. We have also Included some of our best projects</p>
     </div>
     
     <!-- Scrollable Portfolio Container -->
@@ -168,19 +219,46 @@ html, body {
       <div id="clients-container" class="flex overflow-x-auto pb-6 scrollbar-hide scroll-smooth space-x-4 px-2 md:px-6">
         
         <!-- Client 1 -->
-        <a href="https://crowdhunt.tech/" target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
+         <a href="https://zenshot.in/" target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
+          <div class="relative bg-gray-50 rounded-lg shadow-md overflow-hidden group mx-auto">
+            <div class="w-full h-full flex flex-col">
+              <div class="w-full flex items-center justify-center">
+                <img src="zenshot.png" alt="Client Logo" class="w-full h-auto object-contain">
+              </div>
+              <div class="absolute bottom-0 left-0 w-full bg-primary text-white py-3 px-4 text-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                <h4 class="font-semibold"><i class="fa-solid fa-link"></i> Zenshot</h4>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+        <a href="https://remasterbikezone.pages.dev/" target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
+          <div class="relative bg-gray-50 rounded-lg shadow-md overflow-hidden group mx-auto">
+            <div class="w-full h-full flex flex-col">
+              <div class="w-full flex items-center justify-center">
+                <img src="remasterbikezone.jpg" alt="Client Logo" class="w-full h-auto object-contain">
+              </div>
+              <div class="absolute bottom-0 left-0 w-full bg-primary text-white py-3 px-4 text-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                <h4 class="font-semibold"><i class="fa-solid fa-link"></i> REMasterbikezone</h4>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://crowdhunt.pages.dev/" target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
           <div class="relative bg-gray-50 rounded-lg shadow-md overflow-hidden group mx-auto">
             <div class="w-full h-full flex flex-col">
               <div class="w-full flex items-center justify-center">
                 <img src="https://i.ibb.co/YTDGWBbd/Screenshot-2025-02-27-125129.png" alt="Client Logo" class="w-full h-auto object-contain">
               </div>
               <div class="absolute bottom-0 left-0 w-full bg-primary text-white py-3 px-4 text-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                <h4 class="font-semibold"><i class="fa-solid fa-link"></i> Crowdhunt.tech</h4>
+                <h4 class="font-semibold"><i class="fa-solid fa-link"></i> Crowdhunt </h4>
               </div>
             </div>
           </div>
         </a>
-
+        
         <!-- Client 2 -->
         <a href="https://fanatics-ecommerce.onrender.com/" target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
           <div class="relative bg-gray-50 rounded-lg shadow-md overflow-hidden group mx-auto">
@@ -204,9 +282,20 @@ html, body {
             </div>
           </div>
         </a>
+
+        <a href="https://getmestuff.pages.dev/" target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
+          <div class="relative bg-gray-50 rounded-lg shadow-md overflow-hidden group mx-auto">
+            <div class="w-auto flex items-center justify-center">
+              <img src="getmestuff.png" alt="Client Logo" class="w-auto h-full object-contain">
+            </div>
+            <div class="absolute bottom-0 left-0 w-full bg-primary text-white py-3 px-4 text-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <h4 class="font-semibold"><i class="fa-solid fa-link"></i>Getmestuff Platform</h4>
+            </div>
+          </div>
+        </a>
         
-        <!-- Client 4 -->
-        <a href="https://vr7cars.com/" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
+
+        <a href="https://vr7cars.com/"  target="_blank" class="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/2 lg:w-8/10">
           <div class="relative bg-gray-50 rounded-lg shadow-md overflow-hidden group mx-auto">
             <div class="w-full flex items-center justify-center">
               <img src="https://i.ibb.co/Wvt5pWTM/Screenshot-2025-02-27-123457.png" alt="Client Logo" class="w-full h-auto object-contain">
@@ -298,26 +387,26 @@ html, body {
 
   <!-- Pricing Section -->
   <section id="pricing" class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For Website Development</h2>
+    <div class="mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">Custom Website Development</h2>
       
       <div class="text-center max-w-3xl mx-auto mb-12">
         <div class="text-6xl text-primary mb-6">
           <i class="fas fa-laptop-code"></i>
 
         </div>
-        <p class="text-lg">At Buildify, we provide affordable, professional website solutions designed specifically for small businesses. Our tailored plans make it easy to build a strong online presence without breaking the bank.</p>
+        <p class="text-md">At Buildify, we provide affordable, professional website solutions designed specifically for small businesses. Our tailored plans make it easy to build a strong online presence without breaking the bank.</p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 px-8">
         <!-- Starter Plan -->
         <div class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
           <div class="mb-8">
            <h3 class="text-2xl font-bold mb-2">Starter</h3>
-<div class="flex items-center space-x-4 mb-4">
-  <div class="text-2xl text-gray-500 line-through">₹6,999</div>
-  <div class="text-4xl font-extrabold text-primary">₹3,900</div>
-</div>
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="text-2xl text-gray-500 line-through">₹4,999</div>
+              <div class="text-4xl font-extrabold text-primary">₹3,999</div>
+            </div>
 
 
           </div>
@@ -358,7 +447,7 @@ html, body {
           </div>
           
           <div class="text-center mt-8">
-            <a href="#contact" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
+            <a href="customer_form.html?service_type=Starter%20Website%20Enquiry" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
           </div>
         </div>
         
@@ -367,7 +456,11 @@ html, body {
           <div class="absolute top-5 right-0 bg-primary text-white py-1 px-6 text-sm font-semibold transform rotate-45 translate-x-7">POPULAR</div>
           <div class="mb-8">
             <h3 class="text-2xl font-bold mb-2">Business</h3>
-            <div class="text-4xl font-extrabold text-primary mb-4">₹7,999</div>
+            <div class="flex items-center space-x-4 mb-4">
+              <div class="text-2xl text-gray-500 line-through">₹10,999</div>
+              <div class="text-4xl font-extrabold text-primary">₹6,999</div>
+            </div>
+
           </div>
           
           <div class="space-y-4 mb-8">
@@ -406,7 +499,7 @@ html, body {
           </div>
           
           <div class="text-center mt-8">
-            <a href="#contact" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300">Get Started</a>
+            <a href="customer_form.html?service_type=Business%20Website%20Enquiry" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300">Get Started</a>
           </div>
         </div>
         
@@ -415,9 +508,9 @@ html, body {
           <div class="mb-8">
             <h3 class="text-2xl font-bold mb-2">Business Pro</h3>
             <div class="flex items-center space-x-4 mb-4">
-            <div class="text-2xl text-gray-500 line-through">₹19,999</div>
-<div class="text-4xl font-extrabold text-primary mb-4">₹16,999</div>
-</div>
+              <div class="text-2xl text-gray-500 line-through">₹19,999</div>
+              <div class="text-4xl font-extrabold text-primary mb-4">₹14,999</div>
+            </div>
 
           </div>
           
@@ -457,158 +550,129 @@ html, body {
           </div>
           
           <div class="text-center mt-8">
-            <a href="#contact" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
+            <a href="customer_form.html?service_type=Business%20Pro%20Website%20Enquiry" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
           </div>
         </div>
       </div>
       <div class="text-center mt-16">
-  <h2 class="text-2xl md:text-3xl font-bold text-black mb-4">
-    Get a Quote for Your Website Package
-  </h2>
-  <p class="text-lg md:text-xl text-gray-700 mb-6">
-    Click the button below to get started!
-  </p>
-  <a href="#contact" class="inline-block px-8 py-4 bg-gray-800 text-white font-semibold rounded-full border-2 border-gray-800 hover:bg-white hover:text-gray-800 transition-all duration-300">
-    Get Quote 
-  </a>
-</div>
+        <p class="text-xl md:text-3xl font-bold mb-6">Get a Quote for Your Website Package</p>
+        <p class="text-md md:text-xl mb-6"> Click the button below to get started!</p>
+        <a href="customer_form.html?service_type=Custom%20Website%20Enquiry" class="inline-block px-8 py-4 bg-gray-800 text-white font-bold rounded-full border-2 border-gray-800 hover:bg-white hover:text-gray-800 transition-all duration-300">Get Quote Now</a>
+      </div>
 
-  <div class="my-12">
-  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-</div>
+      <div class="my-12">
+        <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+      </div>
+    </div>
+  </section>
+
+<!-- APP DEVELOPMENT -->
+<section id="app-development" class="py-16 md:py-24 w-full">
+  <div class="mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">App Development</h2>
+    
+    <div class="text-center max-w-3xl mx-auto mb-8">
+      <div class="text-6xl text-primary mb-6">
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+      <p class="text-md">Turn your vision into a powerful mobile application with Buildify’s custom app development solutions. We craft intuitive, scalable, and high-performance apps tailored to your business needs.</p>
+    </div>
+
+    <div class="flex justify-center items-center">
+      <div class="relative bg-white border-2 [border-color:#8f5eff] rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 max-w-lg w-full">
+
+        <!-- Header -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold mb-2">Starting From</h3>
+          <div class="text-4xl font-extrabold text-primary mb-4">₹XX,XXX</div>
+        </div>
+
+        <!-- Features -->
+        <div class="space-y-4 mb-8">
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>iOS & Android Support</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>Custom UI/UX Design</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>API Integration</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>Push Notifications</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>Admin Dashboard & Analytics</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>Secure Authentication</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>App Store Deployment</span></div>
+          <div class="flex items-baseline"><i class="far fa-circle-check text-green-500 mr-3"></i><span>12 Months Priority Support</span></div>
+        </div>
+
+        <!-- Get Started Button -->
+        <div class="text-center mt-8">
+          <a href="customer_form.html?service_type=App%20Development%20Enquiry" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-black transition-colors duration-300">Get Quote now</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-16 bg-gray-50 rounded-xl p-8 md:p-10 w-9/10 mx-auto">
+      <h3 class="text-2xl font-bold mb-6 text-center">All App Development Plans Include</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+          <div class="text-3xl text-primary mb-3">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Data Security</h4>
+          <p class="text-center text-sm text-gray-600">End-to-end encrypted communication and secure storage</p>
+        </div>
+        
+        <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+          <div class="text-3xl text-primary mb-3">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Cross-Platform</h4>
+          <p class="text-center text-sm text-gray-600">Optimized for both iOS and Android platforms</p>
+        </div>
+        
+        <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+          <div class="text-3xl text-primary mb-3">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h4 class="font-semibold mb-2">High Performance</h4>
+          <p class="text-center text-sm text-gray-600">Blazing-fast performance and smooth user experience</p>
+        </div>
+        
+        <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
+          <div class="text-3xl text-primary mb-3">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Easy Maintenance</h4>
+          <p class="text-center text-sm text-gray-600">Simple updates and reliable ongoing support</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-16">
+      <p class="text-xl md:text-2xl font-semibold mb-6">Have a Brilliant App Idea?</p>
+      <a href="customer_form.html?service_type=App%20Development%20Enquiry" class="inline-block px-8 py-4 bg-gray-800 text-white font-bold rounded-full border-2 border-gray-800 hover:bg-white hover:text-gray-800 transition-all duration-300">Let's Discuss Your Project</a>
+    </div>
+  </div>
+</section>
 
 
-
-
-<<<<<<< HEAD
-   <!-- Ecommerce Section -->
-<section id="ecommerce" class="py-16 md:py-24 bg-grey-50">
-  <div class="container mx-auto px-4 bg-gray-50" >
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For custom Ecommerce Store</h2>
+<!-- ECOMMERCE -->
+<section id="ecommerce" class="py-16 md:py-24 w-full">
+  <div class="mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">Custom Ecommerce Stores</h2>
     
     <div class="text-center max-w-3xl mx-auto mb-12">
       <div class="text-6xl text-primary mb-6">
         <i class="fas fa-shopping-cart"></i>
       </div>
-      <p class="text-lg">Boost your business with Buildify's powerful ecommerce solutions. Whether starting fresh or upgrading, we deliver secure, scalable, and user-friendly websites that drive sales.</p>
+      <p class="text-md">Boost your business with Buildify's powerful ecommerce solutions. Whether starting fresh or upgrading, we deliver secure, scalable, and user-friendly websites that drive sales.</p>
     </div>
-    <!--
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-       Basic Store Plan 
-      <div class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
-        <div class="mb-8">
-          <h3 class="text-2xl font-bold mb-2">Basic Store</h3>
-          <div class="text-4xl font-extrabold text-primary mb-4">₹14,999</div>
-        </div>
-
     
-        
-        <div class="space-y-4 mb-8">
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Up to 50 Products</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Secure Payment Gateway</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Mobile Responsive Design</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Basic Product Search</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>3 Months Technical Support</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
-            <span>No Product Variations</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
-            <span>No Inventory Management</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
-            <span>No Marketing Integrations</span>
-          </div>
-        </div>
-        
-        <div class="text-center mt-8">
-          <a href="#contact" class="inline-block w-full py-3 bg-gray-800 text-white font-semibold rounded-full hover:bg-primary transition-colors duration-300">Get Started</a>
-        </div>
-      </div>
       
-       Standard Store Plan 
-      <div class="bg-white rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-2 border-primary">
-        <div class="absolute top-5 right-0 bg-primary text-white py-1 px-6 text-sm font-semibold transform rotate-45 translate-x-7">POPULAR</div>
-        <div class="mb-8">
-          <h3 class="text-2xl font-bold mb-2">Standard Store</h3>
-          <div class="text-4xl font-extrabold text-primary mb-4">₹19,999</div>
-        </div>
-        
-        <div class="space-y-4 mb-8">
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Up to 200 Products</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Multiple Payment Gateways</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Product Variations</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Advanced Product Search & Filtering</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Basic Inventory Management</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>Customer Accounts</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="far fa-circle-check text-green-500 mr-3"></i>
-            <span>6 Months Technical Support</span>
-          </div>
-          <div class="flex items-baseline">
-            <i class="fas fa-circle-xmark text-red-500 mr-3"></i>
-            <span>No Advanced Analytics</span>
-          </div>
-        </div>
-        
-        <div class="text-center mt-8">
-          <a href="#contact" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-gray-800 transition-colors duration-300">Get Started</a>
-        </div>
-      </div>
-      <div class="my-12">
-  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-</div>
-      -->
-      
-    <div class="flex justify-center items-center min-h-screen bg-gray-50">
-  <!-- Premium Store Plan Card -->
-  <div class="relative bg-white border-2 [border-color:#8f5eff] rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 max-w-xl w-full">
+    <div class="flex justify-center items-center ">
 
-    <!-- Popular Ribbon 
-    <div class="absolute top-0 right-0">
-      <div class="bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-bl-xl">POPULAR</div>
-    </div>
-    -->
+  <div class="relative bg-white border-2 [border-color:#8f5eff] rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 max-w-lg w-full">
 
     <!-- Header -->
     <div class="mb-8">
-      <h3 class="text-2xl font-bold mb-2">Premium Store</h3>
-      <div class="text-4xl font-extrabold text-purple-600 mb-4">₹XX,XXX</div>
+      <h3 class="text-2xl font-bold mb-2">Starting From</h3>
+      <div class="text-4xl font-extrabold text-primary mb-4">₹XX,XXX</div>
     </div>
 
     <!-- Features -->
@@ -625,14 +689,14 @@ html, body {
 
     <!-- Get Started Button -->
     <div class="text-center mt-8">
-      <a href="#contact" class="inline-block w-full py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors duration-300">Get Quote now</a>
+      <a href="customer_form.html?service_type=Custom%20Ecommerce%20Store%20Enquiry" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-black transition-colors duration-300">Get Quote now</a>
     </div>
 
   </div>
 </div>
 
     
-    <div class="mt-16 bg-gray-50 rounded-xl p-8 md:p-10">
+    <div class="mt-16 bg-gray-50 rounded-xl p-8 md:p-10 w-9/10 mx-auto">
       <h3 class="text-2xl font-bold mb-6 text-center">All Ecommerce Plans Include</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md">
@@ -671,28 +735,26 @@ html, body {
     
     <div class="text-center mt-16">
       <p class="text-xl md:text-2xl font-semibold mb-6">Need a Custom Ecommerce Solution?</p>
-      <a href="#contact" class="inline-block px-8 py-4 bg-gray-800 text-white font-bold rounded-full border-2 border-gray-800 hover:bg-white hover:text-gray-800 transition-all duration-300">Let's Discuss Your Project</a>
+      <a href="customer_form.html?service_type=Custom%20Ecommerce%20Store%20Enquiry" class="inline-block px-8 py-4 bg-gray-800 text-white font-bold rounded-full border-2 border-gray-800 hover:bg-white hover:text-gray-800 transition-all duration-300">Let's Discuss Your Project</a>
     </div>
   </div>
 </section>
-<div class="my-12">
-  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-</div>
 
 <!-- Shopify Section -->
-<section id="ecommerce" class="py-16 md:py-24 bg-grey-50">
-  <div class="container mx-auto px-4 bg-gray-50" >
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For Shopify Store</h2>
+<section id="shopify-ecommerce" class="py-16 md:py-24 bg-gray-50">
+  <div class="mx-auto px-4" >
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">Shopify Store Design</h2>
     
-    <div class="text-center max-w-3xl mx-auto mb-12">
+    <div class="text-center max-w-2xl mx-auto mb-12">
       <div class="text-6xl text-primary mb-6">
         <i class="fas fa-shopping-cart"></i>
       </div>
-      <p class="text-lg">Boost your business with Buildify's powerful ecommerce solutions. Whether starting fresh or upgrading, we deliver secure, scalable, and user-friendly websites that drive sales.</p>
+      <p class="text-md">Boost your business with Buildify's powerful ecommerce solutions. Whether starting fresh or upgrading, we deliver secure, scalable, and user-friendly websites that drive sales.</p>
     </div>
-   <div class="flex justify-center items-center min-h-screen bg-gray-50">
-  <!-- Premium Store Plan Card -->
-  <div class="relative bg-white border-2 border-purple-500 rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 max-w-xl w-full">
+
+   <div class="flex justify-center items-center bg-gray-50">
+
+    <div class="relative bg-white border-2 border-primary rounded-xl shadow-lg p-8 hover:-translate-y-2 transition-all duration-300 max-w-lg w-full">
     
     <!-- Popular Ribbon 
     <div class="absolute top-0 right-0">
@@ -703,7 +765,7 @@ html, body {
     <!-- Header -->
     <div class="mb-8">
       <h3 class="text-2xl font-bold mb-2">Starting From</h3>
-      <div class="text-4xl font-extrabold text-purple-600 mb-4">₹4,999</div>
+      <div class="text-4xl font-extrabold text-primary mb-4">₹4,999</div>
     </div>
 
     <!-- Features -->
@@ -720,32 +782,32 @@ html, body {
 
     <!-- Get Started Button -->
     <div class="text-center mt-8">
-      <a href="#contact" class="inline-block w-full py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition-colors duration-300">Get Started</a>
+      <a href="customer_form.html?service_type=Shopify%20Store%20Enquiry" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-black transition-colors duration-300">Get Full Quote</a>
     </div>
 
   </div>
 </div>
 
-   <div class="my-12">
-  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-</div> 
-    
+</div>
 
-=======
->>>>>>> parent of 743dc25 (Ecommerce Functionality)
+</section>
+
+
+
+
   
 
 
   <!-- Startups Section -->
-  <section id="startups" class="py-16 md:py-24">
-    <div class="container mx-auto px-4">
+  <section id="startups" class="py-10 md:py-16">
+    <div class="mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For Startups</h2>
       
-      <div class="max-w-3xl mx-auto text-center">
+      <div class="max-w-4xl mx-auto text-center">
         <div class="text-6xl text-primary mb-6">
           <i class="far fa-lightbulb"></i>
         </div>
-        <p class="text-lg mb-10">Buildify is dedicated to helping startups succeed by providing affordable, scalable, and innovative website solutions. We design websites that cater to the unique needs of startups, enabling them to make a strong first impression, attract investors, and grow their audience. Our startup-focused packages include everything you need to establish a professional online presence.</p>
+        <p class="text-md mb-10">Buildify is dedicated to helping startups succeed by providing affordable, scalable, and innovative website solutions. We design websites that cater to the unique needs of startups, enabling them to make a strong first impression, attract investors, and grow their audience. Our startup-focused packages include everything you need to establish a professional online presence.</p>
         
         <div class="grid md:grid-cols-2 gap-8 text-left mt-12 mb-12">
           <div class="bg-white p-6 rounded-lg shadow-md">
@@ -765,17 +827,15 @@ html, body {
           </div>
         </div>
         
-        <a href="#contact" class="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 mt-6">Build a Startup Today</a>
+        <a href="customer_form.html?service_type=Startup%20Enquiry" class="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 mt-6">Build a Startup Today</a>
+
+        <div class="my-12">
+          <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+        </div>
+
       </div>
     </div>
   </section>
-<<<<<<< HEAD
-<div class="my-12">
-  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-</div>
- 
-=======
->>>>>>> parent of 743dc25 (Ecommerce Functionality)
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 md:py-24 bg-gray-50">
@@ -793,7 +853,7 @@ html, body {
               </div>
               <div class="flex items-center">
                 <div class="text-xl mt-1 mr-4"><i class="fas fa-envelope"></i></div>
-                <p>rahulthesun82@gmail.com</p>
+                <p>buildifywb@gmail.com</p>
               </div>
               <div class="flex items-center">
                 <div class="text-xl mt-1 mr-4"><i class="fas fa-phone"></i></div>
@@ -835,10 +895,7 @@ html, body {
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                 <input type="email" name="reply_to" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
               </div>
-              <div class="mb-4">
-                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                <input type="text" name="subject" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-              </div>
+              
               <div class="mb-4">
                 <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
@@ -908,45 +965,15 @@ html, body {
     })();
   </script>
 
-<<<<<<< HEAD
-<!-- Footer -->
-<footer class="bg-gray-900 text-white w-full">
-    <div class="max-w-7xl mx-auto px-4 pt-16 pb-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-
-      <!-- Logo & Contact -->
-      <div>
-        <h3 class="text-2xl font-bold mb-6">
-          Buildify <span class="font-extrabold text-white"><i class="fa-solid fa-code"></i></span>
-        </h3>
-        <p class="mb-6">
-          We create stunning websites designed to help your business grow and succeed in the digital landscape.
-        </p>
-        <p><i class="fa-solid fa-phone"></i> +91 9940665596</p>
-        <p><i class="fa-solid fa-envelope"></i> rahulthesun82@gmail.com</p>
-      </div>
-
-      <!-- Company Links -->
-      <div>
-        <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-purple-500 after:bottom-[-8px] after:left-0">Company</h4>
-        <ul class="space-y-3">
-          <li><a href="#about" class="hover:text-purple-400 transition-colors">About Us</a></li>
-          <li><a href="#portfolio" class="hover:text-purple-400 transition-colors">Our Clients</a></li>
-          <li><a href="#pricing" class="hover:text-purple-400 transition-colors">Pricing</a></li>
-          <li><a href="#ecommerce" class="hover:text-purple-400 transition-colors">Ecommerce</a></li>
-          <li><a href="#startups" class="hover:text-purple-400 transition-colors">For Startups</a></li>
-          <li><a href="#contact" class="hover:text-purple-400 transition-colors">Contact Us</a></li>
-        </ul>
-=======
   <!-- Footer -->
   <footer class="bg-gray-800 text-white pt-16 pb-6">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        <div>
-          <h3 class="text-2xl font-bold mb-6">Buildify <span class="font-extrabold text-white"><i class="fa-solid fa-code"></i></span> </h3>
+    <div class="mx-auto px-4 ">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 mx-auto px-4">
+        <div class="px-2">
+          <h3 class="text-3xl font-bold mb-6">Buildify <span class="font-extrabold text-white"><i class="fa-solid fa-code"></i></span> </h3>
           <p class="mb-6">We create stunning websites designed to help your business grow and succeed in the digital landscape.</p>
           <p><i class="fa-solid fa-phone"></i> +91 9940665596</p>
-          <p><i class="fa-solid fa-envelope"></i> rahulthesun82@gmail.com</p>
+          <p><i class="fa-solid fa-envelope"></i> buildifywb@gmail.com</p>
         </div>
         
         <div>
@@ -955,6 +982,7 @@ html, body {
             <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
             <li><a href="#portfolio" class="hover:text-primary transition-colors">Our Clients</a></li>
             <li><a href="#pricing" class="hover:text-primary transition-colors">Pricing</a></li>
+            <li><a href="#services" class="hover:text-primary transition-colors">Services</a></li>
             <li><a href="#startups" class="hover:text-primary transition-colors">For Startups</a></li>
             <li><a href="#contact" class="hover:text-primary transition-colors">Contact Us</a></li>
           </ul>
@@ -965,20 +993,25 @@ html, body {
         <div>
           <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Services</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="hover:text-primary transition-colors">Web Development</a></li>
-            <li><a href="#" class="hover:text-primary transition-colors">E-commerce Solutions</a></li>
-            <li><a href="#" class="hover:text-primary transition-colors">UI/UX Design</a></li>
+            <li><a href="#pricing" class="hover:text-primary transition-colors">Web Development</a></li>
+            <li><a href="#app-development" class="hover:text-primary transition-colors">App Development</a></li>
+            <li><a href="#shopify-ecommerce" class="hover:text-primary transition-colors">Shopify Store</a></li>
+            <li><a href="#ecommerce" class="hover:text-primary transition-colors">E-commerce Solutions</a></li>
+            <li><a href="#startups" class="hover:text-primary transition-colors">Startup Products</a></li>
           </ul>
         </div>
     
         <div>
           <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Client List</h4>
           <ul class="space-y-3">
-            <li><a href="https://crowdhunt.tech/" class="hover:text-primary transition-colors">Crowdhunt</a></li>
-            <li><a href="https://vr7cars.com/" class="hover:text-primary transition-colors">VR7 Cars</a></li>
-            <li><a href="https://mrglossceramiccoating.com/" class="hover:text-primary transition-colors">Mr.Gloss Ceramic Coating</a></li>
-            <li><a href="https://remasterbikezone.in/" class="hover:text-primary transition-colors">RE Master Bike Zone</a></li>
-            <li><a href="https://fanatics-ecommerce.onrender.com/" class="hover:text-primary transition-colors">Fanatics Auto Studio</a></li>
+            <li><a href="https://zenshot.in/" target="_blank" class="hover:text-primary transition-colors">Zenshot</a></li>
+            <li><a href="https://crowdhunt.pages.dev/" target="_blank" class="hover:text-primary transition-colors">Crowdhunt</a></li>
+            <li><a href="https://remasterbikezone.pages.dev/" target="_blank" class="hover:text-primary transition-colors">RE Master Bike Zone</a></li>
+            <li><a href="https://mrglossceramiccoating.com/" target="_blank" class="hover:text-primary transition-colors">Mr.Gloss Ceramic Coating</a></li>
+            <li><a href="https://fanatics-ecommerce.onrender.com/" target="_blank" class="hover:text-primary transition-colors">Fanatics Auto Studio</a></li>
+            <li><a href="https://vr7cars.com/" target="_blank" class="hover:text-primary transition-colors">VR7 Cars</a></li>
+            <li><a href="https://getmestuff.pages.dev/" target="_blank" class="hover:text-primary transition-colors">Getmestuff</a></li>
+
           </ul>
         </div>
         
@@ -994,32 +1027,8 @@ html, body {
           </form>
         </div>
         -->
+      </div>
         
->>>>>>> parent of 743dc25 (Ecommerce Functionality)
-      </div>
-
-      <!-- Services -->
-      <div>
-        <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-purple-500 after:bottom-[-8px] after:left-0">Services</h4>
-        <ul class="space-y-3">
-          <li><a href="#pricing" class="hover:text-purple-400 transition-colors">Web Development</a></li>
-          <li><a href="#ecommerce" class="hover:text-purple-400 transition-colors">E-commerce Solutions</a></li>
-          <li><a href="#startups" class="hover:text-purple-400 transition-colors">Startup Projects</a></li>
-        </ul>
-      </div>
-
-      <!-- Clients -->
-      <div>
-        <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-purple-500 after:bottom-[-8px] after:left-0">Client List</h4>
-        <ul class="space-y-3">
-          <li><a href="https://crowdhunt.tech/" class="hover:text-purple-400 transition-colors">Crowdhunt</a></li>
-          <li><a href="https://vr7cars.com/" class="hover:text-purple-400 transition-colors">VR7 Cars</a></li>
-          <li><a href="https://mrglossceramiccoating.com/" class="hover:text-purple-400 transition-colors">Mr.Gloss Ceramic Coating</a></li>
-          <li><a href="https://remasterbikezone.in/" class="hover:text-purple-400 transition-colors">RE Master Bike Zone</a></li>
-          <li><a href="https://fanatics-ecommerce.onrender.com/" class="hover:text-purple-400 transition-colors">Fanatics Auto Studio</a></li>
-        </ul>
-      </div>
-    </div>
 
     <!-- Bottom Bar -->
     <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
@@ -1028,31 +1037,48 @@ html, body {
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
 
+  mobileMenuButton.addEventListener('click', function () {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+  });
 
-  <script>
-    // Mobile menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const closeMenuButton = document.getElementById('close-menu');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('translate-x-full');
-      });
-      
-      closeMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.add('translate-x-full');
-      });
-      
-      // Close menu when clicking on a link
-      const mobileLinks = mobileMenu.querySelectorAll('a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          mobileMenu.classList.add('translate-x-full');
-        });
-      });
+  closeMenu.addEventListener('click', function () {
+    mobileMenu.classList.add('translate-x-full');
+    mobileMenu.classList.remove('translate-x-0');
+  });
+
+  // Handle desktop services toggle
+  const servicesToggle = document.getElementById('mobile-services-toggle');
+  const servicesMenu = document.getElementById('mobile-services-menu');
+  const chevron = document.getElementById('mobile-chevron');
+
+  if (servicesToggle && servicesMenu && chevron) {
+    servicesToggle.addEventListener('click', function () {
+      servicesMenu.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
     });
-  </script>
+  }
+
+  // Handle mobile services toggle
+  const servicesToggle2 = document.getElementById('mobile-services-toggle-2');
+  const servicesMenu2 = document.getElementById('mobile-services-menu-2');
+  const chevron2 = document.getElementById('mobile-chevron-2');
+
+  if (servicesToggle2 && servicesMenu2 && chevron2) {
+    servicesToggle2.addEventListener('click', function () {
+      servicesMenu2.classList.toggle('hidden');
+      chevron2.classList.toggle('rotate-180');
+    });
+  }
+});
+
+</script>
+
 </body>
 </html>
