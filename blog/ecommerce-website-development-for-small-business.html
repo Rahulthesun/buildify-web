@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover how small businesses can build powerful ecommerce websites in 2025. Learn tools, costs, features & more to grow your online store.">
+  <title>Ecommerce Website Development for Small Business | Buildify</title>
+  
+  <!-- Tailwind & Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+          },
+          colors: {
+            primary: {
+              DEFAULT: '#7a66ee',
+              light: '#ece9ff',
+            }
+          }
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html, body {
+      overflow-x: hidden;
+    }
+
+    @keyframes gradient-x {
+      0%, 100% {
+        background-size: 200% 200%;
+        background-position: left center;
+      }
+      50% {
+        background-size: 200% 200%;
+        background-position: right center;
+      }
+    }
+    
+    .animate-gradient-x {
+      animation: gradient-x 15s ease infinite;
+    }
+
+    @keyframes blob {
+      0% {
+        transform: translate(0px, 0px) scale(1);
+      }
+      33% {
+        transform: translate(30px, -50px) scale(1.1);
+      }
+      66% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+      100% {
+        transform: translate(0px, 0px) scale(1);
+      }
+    }
+    
+    .animate-blob {
+      animation: blob 7s infinite;
+    }
+    
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+
+    /* Navbar scroll transitions */
+    header {
+      background-color: transparent;
+      transition: all 0.3s ease;
+    }
+    
+    header.scrolled {
+      background: linear-gradient(to right, rgba(17, 24, 39, 0.95), rgba(122, 102, 238, 0.95), rgba(17, 24, 39, 0.95));
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Update text colors when navbar has gradient background */
+    header.scrolled a,
+    header.scrolled button {
+      color: white !important;
+    }
+
+    header.scrolled a:hover,
+    header.scrolled button:hover {
+      color: #ece9ff !important;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-transparent z-50 transition-all duration-300">
+    <div class="container mx-auto px-8 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-white">
+        <span class="font-extrabold"><i class="fa-solid fa-code"></i></span> Buildify-Web 
+      </a>
+      
+      <button id="mobile-menu-button" class="lg:hidden text-2xl focus:outline-none text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav id="nav-menu" class="hidden lg:flex items-center space-x-8">
+        <a href="/" class="font-medium text-white hover:text-primary-light relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary-light after:transition-all hover:after:w-full">Home</a>
+        <a href="/#about" class="font-medium text-white hover:text-primary-light relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary-light after:transition-all hover:after:w-full">About Us</a>
+        <a href="/#portfolio" class="font-medium text-white hover:text-primary-light relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary-light after:transition-all hover:after:w-full">Our Clients</a>
+        <a href="/#pricing" class="font-medium text-white hover:text-primary-light relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary-light after:transition-all hover:after:w-full">Services</a>
+        <a href="/#contact" class="font-medium text-white hover:text-primary-light relative after:absolute after:bottom-[-5px] after:left-0 after:h-0.5 after:w-0 after:bg-primary-light after:transition-all hover:after:w-full">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-gradient-to-br from-gray-900 via-primary to-gray-900 shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden">
+    <div class="flex justify-end p-4">
+      <button id="close-menu" class="text-2xl focus:outline-none text-white">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-4 p-4">
+      <a href="/" class="py-2 font-medium text-white hover:text-primary-light">Home</a>
+      <a href="/#about" class="py-2 font-medium text-white hover:text-primary-light">About Us</a>
+      <a href="/#portfolio" class="py-2 font-medium text-white hover:text-primary-light">Our Clients</a>
+      <a href="/#pricing" class="py-2 font-medium text-white hover:text-primary-light">Services</a>
+      <a href="/#contact" class="py-2 font-medium text-white hover:text-primary-light">Contact Us</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-16 relative overflow-hidden">
+    <!-- Tech-inspired background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-primary to-gray-900"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\" fill=\"%23ffffff\" fill-opacity=\"0.1\" fill-rule=\"evenodd\"/%3E%3C/svg%3E');"></div>
+    
+    <!-- Animated grid overlay -->
+    <div class="absolute inset-0" style="background-image: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+    
+    <!-- Glowing orbs -->
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+    <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    
+    <!-- Content -->
+    <div class="container mx-auto px-4 relative">
+      <div class="flex flex-col items-center justify-center text-center py-8 md:py-16">
+        <div class="max-w-3xl">
+          <h1 class="text-3xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">Ecommerce Website Development for Small Businesses</h1>
+          <p class="text-lg md:text-xl text-white">A 2025 Guide to Building Online Stores That Convert</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Content -->
+  <main class="max-w-4xl mx-auto px-4 py-12 space-y-16">
+    <!-- Introduction -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">Ecommerce Website Development Guide 2025</h2>
+        <p class="text-lg text-gray-700">Transform your small business with a powerful online presence. Learn everything you need to know about building and growing your ecommerce store.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-primary-light p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-primary mb-4">Why Go Online?</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-globe text-primary mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Global Reach</h4>
+                <p class="text-sm text-gray-700">Sell to customers worldwide, 24/7</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-chart-line text-primary mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Growth Potential</h4>
+                <p class="text-sm text-gray-700">Scale your business without physical limitations</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-wallet text-primary mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Cost-Effective</h4>
+                <p class="text-sm text-gray-700">Lower overhead compared to physical stores</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-primary-light p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-primary mb-4">Key Benefits</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-store text-primary mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Always Open</h4>
+                <p class="text-sm text-gray-700">Your store never closes</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-users text-primary mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Customer Insights</h4>
+                <p class="text-sm text-gray-700">Track behavior and preferences</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-rocket text-primary mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-semibold text-gray-800">Quick Launch</h4>
+                <p class="text-sm text-gray-700">Start selling in days, not months</p>
+              </div>
+            </li>
+      </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Essential Features -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">Essential Features</h2>
+        <p class="text-lg text-gray-700">Build a successful online store with these must-have features</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-mobile-alt text-lg"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">Mobile-First Design</h3>
+            </div>
+            <p class="text-sm text-gray-700">Ensure your store looks and works perfectly on all devices, as most customers shop on mobile.</p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-lock text-lg"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">Secure Payments</h3>
+            </div>
+            <p class="text-sm text-gray-700">Integrate trusted payment gateways like Stripe and Razorpay for safe transactions.</p>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-search text-lg"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">Smart Search</h3>
+            </div>
+            <p class="text-sm text-gray-700">Help customers find products quickly with advanced search and filtering options.</p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <div class="bg-primary text-white p-3 rounded-full mr-4">
+                <i class="fas fa-truck text-lg"></i>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800">Order Tracking</h3>
+            </div>
+            <p class="text-sm text-gray-700">Keep customers informed with real-time order status and delivery tracking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Comparison -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">Choose Your Platform</h2>
+        <p class="text-lg text-gray-700">Compare the top platforms to find your perfect match</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">Shopify</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              All-in-one solution
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Easy setup
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Built-in marketing
+            </li>
+          </ul>
+          <p class="mt-4 text-xs text-gray-600">Best for: Product-focused stores</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">WooCommerce</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Highly customizable
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              WordPress integration
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Extensive plugins
+            </li>
+          </ul>
+          <p class="mt-4 text-xs text-gray-600">Best for: Content-heavy sites</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">Wix</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Drag-and-drop builder
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              User-friendly
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Quick setup
+            </li>
+          </ul>
+          <p class="mt-4 text-xs text-gray-600">Best for: Beginner-friendly stores</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">Custom Ecommerce</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Fully customized
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Scalable architecture
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i>
+              Advanced features
+            </li>
+          </ul>
+          <p class="mt-4 text-xs text-gray-600">Best for: Large businesses</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Breakdown -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">Investment Breakdown</h2>
+        <p class="text-lg text-gray-700">Understanding the costs involved in your ecommerce journey</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-primary mb-6">Initial Setup</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center">
+              <span class="text-sm text-gray-700">Domain</span>
+              <span class="font-semibold text-sm">₹1,000–₹2,000</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-sm text-gray-700">Hosting</span>
+              <span class="font-semibold text-sm">₹2,000–₹8,000</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-sm text-gray-700">Development</span>
+              <span class="font-semibold text-sm">₹10,000–₹60,000</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-primary mb-6">Monthly Costs</h3>
+          <ul class="space-y-4">
+            <li class="flex justify-between items-center">
+              <span class="text-sm text-gray-700">Platform fees</span>
+              <span class="font-semibold text-sm">₹1,000–₹3,000</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-sm text-gray-700">SEO & Marketing</span>
+              <span class="font-semibold text-sm">₹3,000+</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-sm text-gray-700">Maintenance</span>
+              <span class="font-semibold text-sm">₹1,000+</span>
+            </li>
+      </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Tips -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-6">SEO Optimization Tips</h2>
+        <p class="text-lg text-gray-700">Make your store visible to potential customers</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-primary-light p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-primary mb-6">On-Page SEO</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Optimize product titles and descriptions</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Use high-quality images with alt text</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Create unique product content</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Implement proper URL structure</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-primary-light p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-primary mb-6">Technical SEO</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Improve page load speed</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Create an XML sitemap</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Implement schema markup</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+              <span class="text-sm text-gray-700">Ensure mobile responsiveness</span>
+            </li>
+      </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="bg-white rounded-xl shadow-lg p-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-primary mb-6">Ready to Start Your Ecommerce Journey?</h2>
+        <p class="text-lg text-gray-700 mb-8">Building an ecommerce website is an investment in your business's future. With the right platform and features, you can create a successful online store that grows with your business.</p>
+        <p class="text-lg text-gray-700 mb-12">Need professional help? <strong>Buildify-Web</strong> offers comprehensive ecommerce development services with SEO and branding built-in.</p>
+
+    <!-- CTA Section -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="/#contact" class="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-full transition text-center text-base">Get Free Consultation</a>
+          <a href="/#pricing" class="inline-block border-2 border-primary text-primary hover:text-white hover:bg-primary font-semibold py-3 px-8 rounded-full transition text-center text-base">View Our Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white pt-16 pb-6 mt-16">
+    <div class="mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="px-2">
+          <h3 class="text-3xl font-bold mb-6">Buildify <span class="font-extrabold text-white"><i class="fa-solid fa-code"></i></span></h3>
+          <p class="mb-6">We create stunning websites designed to help your business grow and succeed in the digital landscape.</p>
+          <p><i class="fa-solid fa-phone"></i> +91 9940665596</p>
+          <p><i class="fa-solid fa-envelope"></i> hello@buildify-web.com</p>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="/#about" class="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="/#portfolio" class="hover:text-primary transition-colors">Our Clients</a></li>
+            <li><a href="/#pricing" class="hover:text-primary transition-colors">Pricing</a></li>
+            <li><a href="/#services" class="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="/#contact" class="hover:text-primary transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="/#pricing" class="hover:text-primary transition-colors">Web Development</a></li>
+            <li><a href="/#app-development" class="hover:text-primary transition-colors">App Development</a></li>
+            <li><a href="/#shopify-ecommerce" class="hover:text-primary transition-colors">Shopify Store</a></li>
+            <li><a href="/#ecommerce" class="hover:text-primary transition-colors">E-commerce Solutions</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-xl font-semibold mb-6 relative after:absolute after:w-10 after:h-0.5 after:bg-primary after:bottom-[-8px] after:left-0">Client List</h4>
+          <ul class="space-y-3">
+            <li><a href="https://zenshot.in/" target="_blank" class="hover:text-primary transition-colors">Zenshot</a></li>
+            <li><a href="https://crowdhunt.pages.dev/" target="_blank" class="hover:text-primary transition-colors">Crowdhunt</a></li>
+            <li><a href="https://remasterbikezone.pages.dev/" target="_blank" class="hover:text-primary transition-colors">RE Master Bike Zone</a></li>
+            <li><a href="https://mrglossceramiccoating.com/" target="_blank" class="hover:text-primary transition-colors">Mr.Gloss Ceramic Coating</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+        <p>&copy; 2025 Buildify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+      const header = document.querySelector('header');
+
+      // Mobile menu functionality
+      mobileMenuButton.addEventListener('click', function () {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      });
+
+      closeMenu.addEventListener('click', function () {
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+      });
+
+      // Navbar background on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
