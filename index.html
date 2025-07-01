@@ -151,6 +151,16 @@
     header.scrolled button:hover {
       color: #ece9ff !important;
     }
+
+    /* Add hover effect for SEO plans cards */
+    #seo-plans .hover-card {
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    #seo-plans .hover-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 8px 32px 0 rgba(122,102,238,0.15), 0 1.5px 4px 0 rgba(0,0,0,0.08);
+      z-index: 2;
+    }
   </style>
 </head>
 
@@ -180,6 +190,7 @@
             <a href="#app-development" class="block px-4 py-2 hover:bg-gray-800 text-sm text-white">App Development</a>
             <a href="#ecommerce" class="block px-4 py-2 hover:bg-gray-800 text-sm text-white">Custom Ecommerce Stores</a>
             <a href="#shopify-ecommerce" class="block px-4 py-2 hover:bg-gray-800 text-sm text-white">Shopify Ecommerce</a>
+            <a href="#seo-plans" class="block px-4 py-2 hover:bg-gray-800 text-sm text-white">SEO Plans</a>
             <a href="#startups" class="block px-4 py-2 hover:bg-gray-800 text-sm text-white">Startups</a>
           </div>
         </div>
@@ -211,6 +222,7 @@
           <a href="#app-development" class="block px-4 py-2 hover:bg-gray-800 text-white">App Development</a>
           <a href="#ecommerce" class="block px-4 py-2 hover:bg-gray-800 text-white">Custom Ecommerce Stores</a>
           <a href="#shopify-ecommerce" class="block px-4 py-2 hover:bg-gray-800 text-white">Shopify Ecommerce</a>
+          <a href="#seo-plans" class="block px-4 py-2 hover:bg-gray-800 text-white">SEO Plans</a>
           <a href="#startups" class="block px-4 py-2 hover:bg-gray-800 text-white">Startups</a>
         </div>
       </div>
@@ -272,7 +284,7 @@
       </div>
       <div class="w-full md:w-1/2 text-gray-700">
         <p class="text-lg mb-4 leading-relaxed">
-          At Buildify, we’re not just building websites — we’re building launchpads. Every line of code we write is designed to help your brand shine and scale fast.
+          At Buildify, we're not just building websites — we're building launchpads. Every line of code we write is designed to help your brand shine and scale fast.
         </p>
         <p class="text-lg leading-relaxed">
           Mobile-friendly? Always. Pixel-perfect? You bet. Our goal is simple: make your business look amazing and work like a charm — everywhere.
@@ -281,6 +293,7 @@
     </div>
   </div>
 </section>
+<hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" />
 
 
 <!-- Portfolio Section -->
@@ -400,10 +413,7 @@
     </div>
   </div>
 </section>
-
-<div class="my-12">
-  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-</div>
+<hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" />
 
 
 
@@ -650,6 +660,7 @@
       </div>
     </div>
   </section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
 
 <!-- APP DEVELOPMENT -->
 <section id="app-development" class="py-16 md:py-24 w-full">
@@ -735,6 +746,10 @@
     </div>
   </div>
 </section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
+<div class="my-12">
+  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+</div>
 
 
 <!-- ECOMMERCE -->
@@ -824,6 +839,11 @@
     </div>
   </div>
 </section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
+
+<div class="my-12">
+  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+</div>
 
 <!-- Shopify Section -->
 <section id="shopify-ecommerce" class="py-16 md:py-24 bg-gray-50">
@@ -876,15 +896,78 @@
 </div>
 
 </section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
+<div class="my-12">
+  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+</div>
 
+<!-- SEO Plans Section -->
+<section id="seo-plans" class="py-16 md:py-24 bg-white">
+  <div class="mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Buildify-Web SEO Plans</h2>
+    <p class="text-primary text-center text-xl font-semibold mb-12">Custom SEO Plans</p>
+    <div class="flex flex-col md:flex-row justify-center gap-8">
+      <!-- Starter Plan -->
+      <div class="flex-1 bg-gray-50 rounded-xl shadow-lg p-8 border-2 border-gray-200 flex flex-col items-center hover-card">
+        <h3 class="text-2xl font-bold mb-2">Starter Plan</h3>
+        <div class="text-3xl font-extrabold text-primary mb-2">₹4,999</div>
+        <p class="text-gray-500 mb-4">(SEO Report for 1 Month)</p>
+        <ul class="text-left space-y-2 mb-6">
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Keyword Research (Up to 5 keywords)</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>1 SEO Blog Article</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Homepage SEO Optimization</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Progress Report after 1 Month</li>
+        </ul>
+        <a href="customer_form.html?service_type=SEO%20Starter%20Plan" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-black transition-colors duration-300 text-center">Get Started</a>
+      </div>
+      <!-- Growth Plan -->
+      <div class="flex-1 bg-white rounded-xl shadow-2xl p-8 border-4 border-primary flex flex-col items-center relative hover-card">
+        <span class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-4 py-1 rounded-full">RECOMMENDED</span>
+        <h3 class="text-2xl font-bold mb-2">Growth Plan</h3>
+        <div class="text-3xl font-extrabold text-primary mb-2">₹7,999</div>
+        <p class="text-gray-500 mb-4">(SEO Report for 2 Months)</p>
+        <ul class="text-left space-y-2 mb-6">
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Keyword Research (Up to 10 keywords)</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>5 SEO Blog Articles</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Full Website SEO Optimization</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Basic Website Design Refresh</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Progress Report every month for 2 Months</li>
+        </ul>
+        <a href="customer_form.html?service_type=SEO%20Growth%20Plan" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-black transition-colors duration-300 text-center">Get Started</a>
+      </div>
+      <!-- Pro Plan -->
+      <div class="flex-1 bg-gray-50 rounded-xl shadow-lg p-8 border-2 border-gray-200 flex flex-col items-center hover-card">
+        <h3 class="text-2xl font-bold mb-2">Pro Plan</h3>
+        <div class="text-3xl font-extrabold text-primary mb-2">₹11,999</div>
+        <p class="text-gray-500 mb-4">(SEO Report for 3 Months)</p>
+        <ul class="text-left space-y-2 mb-6">
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Keyword Research (Up to 20 keywords)</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>10 SEO Blog Articles</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Full Website SEO Optimization</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Competitor Keyword Check</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Website Design Refresh</li>
+          <li class="flex items-center"><span class="text-green-500 mr-2"><i class="fas fa-check-circle"></i></span>Progress Report every month for 3 Months</li>
+        </ul>
+        <a href="customer_form.html?service_type=SEO%20Pro%20Plan" class="inline-block w-full py-3 bg-primary text-white font-semibold rounded-full hover:bg-black transition-colors duration-300 text-center">Get Started</a>
+      </div>
+    </div>
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold mb-2">Ready to grow your online presence?</h3>
+      <p class="mb-6">Our tailored SEO strategies will boost your ceramic coating business visibility and attract more customers.</p>
+      <a href="#contact" class="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full border-2 border-primary hover:bg-white hover:text-primary transition-all duration-300">Contact Buildify Today!</a>
+    </div>
+  </div>
+</section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
 
+<div class="my-12">
+  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+</div>
 
+<!--#include file="seo.html" -->
 
-  
-
-
-  <!-- Startups Section -->
-  <section id="startups" class="py-10 md:py-16">
+<!-- Startups Section -->
+<section id="startups" class="py-10 md:py-16">
     <div class="mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 relative after:content-[''] after:absolute after:w-20 after:h-1 after:bg-primary after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2">For Startups</h2>
       
@@ -914,13 +997,17 @@
         
         <a href="customer_form.html?service_type=Startup%20Enquiry" class="inline-block px-10 py-4 bg-primary text-white font-bold rounded-full border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 mt-6">Build a Startup Today</a>
 
-        <div class="my-12">
+        <!-- <div class="my-12">
           <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
-        </div>
+        </div> -->
 
       </div>
     </div>
   </section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
+<div class="my-12">
+  <div class="h-1 bg-gradient-to-r from-[#8f5eff] via-[#8f5eff] to-[#8f5eff] rounded-full w-3/4 mx-auto"></div>
+</div>
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 md:py-24 bg-gray-50">
@@ -998,6 +1085,7 @@
       </div>
     </div>
   </section>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -1083,6 +1171,7 @@
             <li><a href="#shopify-ecommerce" class="hover:text-primary transition-colors">Shopify Store</a></li>
             <li><a href="#ecommerce" class="hover:text-primary transition-colors">E-commerce Solutions</a></li>
             <li><a href="#startups" class="hover:text-primary transition-colors">Startup Products</a></li>
+            <li><a href="#seo-plans" class="hover:text-primary transition-colors">SEO Plans</a></li>
           </ul>
         </div>
     
@@ -1121,6 +1210,7 @@
     </div>
   </div>
 </footer>
+<!-- <hr class="my-0 border-t-4 border-[#6c2bd7] w-1/2 mx-auto" /> -->
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -1149,6 +1239,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+// Handle mobile services toggle
+const servicesToggle2 = document.getElementById('mobile-services-toggle-2');
+const servicesMenu2 = document.getElementById('mobile-services-menu-2');
+const chevron2 = document.getElementById('mobile-chevron-2');
+
+if (servicesToggle2 && servicesMenu2 && chevron2) {
+  servicesToggle2.addEventListener('click', function () {
+    servicesMenu2.classList.toggle('hidden');
+    chevron2.classList.toggle('rotate-180');
+  });
+}
 
 </script>
 
